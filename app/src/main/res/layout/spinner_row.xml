@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grayLight"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="@dimen/_5sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/spinner_name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            tools:text="English"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/_13sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/gtw_alsheim_pro_regular"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/colorPrimary" />
+    </LinearLayout>
+</LinearLayout>

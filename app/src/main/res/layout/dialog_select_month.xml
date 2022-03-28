@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/monthLayout"
+    android:visibility="gone"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.9"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@android:color/black" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnClose"
+        android:src="@drawable/ic_close"
+        android:layout_above="@+id/tvAddExpense"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:ellipsize="end"
+        android:layout_above="@+id/cardView"
+        android:fontFamily="@font/gtw_alsheim_pro_bold"
+        android:singleLine="true"
+        android:layout_centerHorizontal="true"
+        android:text="Select"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/dropdown"
+                android:layout_width="match_parent"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:backgroundTint="@color/grayLight"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/rounded_button">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/txtdropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerVertical="true"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:background="@null"
+                    android:fontFamily="@font/gtw_alsheim_pro_medium"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="Month"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="RtlCompat" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_drop_down"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:visibility="visible"
+                android:id="@+id/layout_months"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:id="@+id/btn_All"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_button">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtAll"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="All"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnJanuary"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtJanuary"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="January"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btnFebruary"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtFebruary"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="February"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnMarch"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtMarch"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="March"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btnApril"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtApril"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="April"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnMay"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtMay"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="May"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btnJune"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtJune"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="June"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnJuly"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtJuly"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="July"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btnAugust"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtAugust"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="August"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnSeptember"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtSeptember"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="September"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btnOctober"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtOctober"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="October"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnNovember"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtNovember"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="November"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btnDecember"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtDecember"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="December"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnSave"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:backgroundTint="@color/facebook"
+                        android:background="@drawable/rounded_button">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtSave"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Save"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Year Layout-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layout_year"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2021"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_button">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2021"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="2021"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn2022"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2022"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="2022"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2023"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2023"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="2023"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn2024"
+                        android:layout_width="match_parent"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2024"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2024"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2025"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2025"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2025"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn2026"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2026"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2026"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2027"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2027"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="2027"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn2028"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2028"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2028"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2029"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2029"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2029"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn2030"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2030"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2030"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2031"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2031"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2031"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btn2032"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2032"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2032"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/btn2033"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/rounded_border_without_cornor_white">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt2033"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:singleLine="true"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/_12sdp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:text="2033"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnYearSave"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:backgroundTint="@color/facebook"
+                        android:background="@drawable/rounded_button">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txtYearSave"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_centerVertical="true"
+                            android:fontFamily="@font/gtw_alsheim_pro_medium"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:text="Save"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="RtlCompat" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Today and Yesterday Layout-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layoutToday"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/btnTodaySave"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:backgroundTint="@color/facebook"
+                    android:background="@drawable/rounded_button">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/gtw_alsheim_pro_medium"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="Save"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="RtlCompat" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

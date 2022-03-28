@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Groot</string>
+
+    <!--For Facebook Social Integration-->
+    <string name="facebook_app_id">1092951524511351</string>
+    <string name="fb_login_protocol_scheme">fb1092951524511351</string>
+    <string name="test_key">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!--Signup screen-->
+    <string name="create_your_naccount">Create Your\nAccount</string>
+    <string name="i_agree">I agree</string>
+    <string name="terms"><u>Terms</u></string>
+    <string name="and"><![CDATA[&]]></string>
+    <string name="conditions"><u>Conditions</u></string>
+    <string name="sign_up_regular">Sign Up</string>
+    <string name="already_an_have_an_account">Already have an account?</string>
+    <string name="loginu"><u>Log In</u></string>
+
+    <!--Login Screen-->
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="log_in">Log In</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="or">Or</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="please_enter_user_name">Please enter user name</string>
+    <string name="please_enter_password">Please enter password</string>
+
+    <!--forgot password-->
+    <string name="enteryourregister">Enter your registered mobile number to\n receive password reset instruction</string>
+    <string name="signin_signup">Sign In / Sign Up</string>
+    <string name="submit">Submit</string>
+    <string name="backto">Back to</string>
+    <string name="verifyyournumber">Verify your number</string>
+
+    <!--otp screen-->
+    <string name="pleaseentertheverification">Please enter the verification code send to your given mobile number</string>
+    <string name="continues">Continue</string>
+    <string name="have_receive_it_yet">Haven\'t received it yet?</string>
+    <string name="resend"><u>Resend</u></string>
+    <string name="please_enter_otp">Please enter OTP</string>
+    <string name="please_enter_valid_otp">Please enter valid OTP</string>
+
+    <!--Common Strings-->
+    <string name="something_went_wrong">Application is not working properly as per expected,please close it and again restart it</string>
+    <string name="connection_timeout">Connection timeout. Please try again later.</string>
+    <string name="network_error">Cannot connect to Internet…Please check your connection!</string>
+    <string name="no_internet">Could not connect to the internet. Please check your network.</string>
+
+    <string name="are_you_delete">Are you sure you want to delete?</string>
+    <string name="are_you_logout">Are you sure you want to Logout?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="please_enter_income_category_name">Please enter Income Category name</string>
+    <string name="please_enter_expense_category_name">Please enter Expense Category name</string>
+
+    <string name="iAgree">I agree to the</string>
+    <string name="privacy_policy"><u>Privacy Policy</u></string>
+    <string name="and_"> &amp; </string>
+    <string name="termsCondition"><u><![CDATA[Terms and Conditions]]></u></string>
+
+
+    <string name="tci_client_dev">TCI Client Dev</string>
+    <string name="device_uuid">DEVICE UUID</string>
+    <string name="email">EMAIL</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="date_of_birth">DATE OF BIRTH</string>
+    <string name="street">STREET</string>
+    <string name="street_number">STREET NUMBER</string>
+    <string name="apt_no">APT NO</string>
+    <string name="postal_code">POSTAL CODE</string>
+    <string name="city">CITY</string>
+    <string name="state">STATE</string>
+</resources>
